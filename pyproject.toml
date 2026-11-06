@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pharmacy-demand-expiry-risk"
+version = "0.1.0"
+description = "Pharmacy medicine demand forecasting and batch expiry risk advisory system"
+authors = [
+    { name = "ML Engineering Candidate", email = "candidate@example.com" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=2.0.0",
+    "pandas>=2.0.0",
+    "scikit-learn>=1.4.0",
+    "lightgbm>=4.0.0",
+    "statsmodels>=0.14.0",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.25.0",
+    "streamlit>=1.30.0",
+    "pydantic>=2.0.0",
+    "pyyaml>=6.0.0",
+    "joblib>=1.3.0",
+    "matplotlib>=3.8.0",
+    "seaborn>=0.13.0",
+    "pytest>=8.0.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"

@@ -1,0 +1,71 @@
+# Pharmacy Medicine Demand & Expiry-Risk Forecasting Configuration
+
+project:
+  name: "pharmacy-demand-expiry-risk"
+  description: "Decision-support forecasting for pharmacy demand and batch expiry risk"
+  version: "0.1.0"
+  random_seed: 42
+
+paths:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  models_dir: "models"
+  reports_dir: "reports"
+  figures_dir: "reports/figures"
+  experiments_file: "reports/experiments.csv"
+  metrics_file: "reports/metrics.json"
+
+data_generation:
+  num_products: 60
+  start_date: "2023-01-01"
+  end_date: "2024-12-31"
+  shelf_life_min_months: 6
+  shelf_life_max_months: 36
+  missing_rate: 0.005
+  duplicate_rate: 0.002
+  outlier_rate: 0.003
+  categories:
+    - "analgesics"
+    - "antipyretics"
+    - "antacids"
+    - "vitamins_supplements"
+    - "cough_cold"
+    - "allergy"
+    - "first_aid"
+    - "diabetic_care"
+    - "baby_care"
+    - "skin_care"
+
+splits:
+  train_start: "2023-01-01"
+  train_end: "2024-03-15"
+  gap_train_val_days: 28
+  val_start: "2024-04-13"
+  val_end: "2024-09-05"
+  gap_val_test_days: 28
+  test_start: "2024-10-04"
+  test_end: "2024-12-31"
+
+forecasting:
+  horizon_days: 28
+  lag_days: [1, 7, 14, 28]
+  rolling_windows: [7, 14, 28]
+  quantiles: [0.10, 0.50, 0.90]
+
+expiry_risk:
+  scoring_window_days: 90
+  allocation_share_method: "fefo"
+  safety_factor: 1.15
+  threshold_units_unsold: 5.0
+  cost_ratio: 5.0
+  cost_fn: 5.0
+  cost_fp: 1.0
+
+api:
+  host: "127.0.0.1"
+  port: 8000
+  title: "Pharmacy Demand & Expiry Risk Advisory API"
+  version: "0.1.0"
+
+app:
+  port: 8501
