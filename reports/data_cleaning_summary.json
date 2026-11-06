@@ -1,0 +1,27 @@
+{
+  "products": {
+    "initial_rows": 60,
+    "duplicates_removed": 0,
+    "final_rows": 60
+  },
+  "calendar": {
+    "initial_rows": 731,
+    "duplicates_removed": 0,
+    "final_rows": 731
+  },
+  "batches": {
+    "initial_rows": 981,
+    "duplicates_removed": 0,
+    "invalid_expiry_dropped": 4,
+    "final_rows": 977
+  },
+  "daily_sales": {
+    "initial_rows": 43947,
+    "duplicates_removed": 87,
+    "missing_price_imputed": 241,
+    "missing_sales_imputed": 108,
+    "negative_sales_rectified": 43,
+    "outliers_capped": 86,
+    "final_rows": 43860
+  }
+}
