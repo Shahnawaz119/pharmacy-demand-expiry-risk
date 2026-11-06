@@ -322,12 +322,17 @@ def simulate_sales_and_batches(
         p_id = prod["product_id"]
         shelf_months = prod["shelf_life_months"]
 
-        # Initial 2 batches with staggered expiry dates
-        for b_idx in range(2):
-            recv_date = start_dt - timedelta(days=int(rng.integers(15, 60)))
-            shelf_days = int(shelf_months * 30.4)
-            expiry_date = recv_date + timedelta(days=shelf_days)
-            qty = int(prod["base_daily_demand"] * rng.integers(25, 45))
+        # Initial batches with realistic distributed expiry dates across store inventory
+        # Some batches are near-expiry (2-4 months), some mid (6-12 months), some long (18+ months)
+        num_initial_batches = int(rng.integers(2, 4))
+        for b_idx in range(num_initial_batches):
+            recv_date = start_dt - timedelta(days=int(rng.integers(30, 180)))
+            # Staggered remaining shelf life from start_dt: 45 to 540 days
+            rem_days_from_start = int(rng.integers(45, min(600, int(shelf_months * 30.4))))
+            expiry_date = start_dt + timedelta(days=rem_days_from_start)
+            # Quantity scaled so some batches sell out and some are overstocked
+            overstock_factor = rng.uniform(0.6, 1.8)
+            qty = max(20, int(prod["base_daily_demand"] * (rem_days_from_start / 2.0) * overstock_factor))
             b_id = f"BAT_{batch_counter:05d}"
             batch_counter += 1
 
@@ -422,11 +427,16 @@ def simulate_sales_and_batches(
 
             if remaining_stock_after_sales < reorder_threshold:
                 # Place new batch replenishment
-                order_qty = int(base_demand * rng.integers(30, 60))
+                # Standard order quantity: 25 to 50 days of stock; 15% bulk buy: 60 to 100 days
+                if rng.random() < 0.15:
+                    order_qty = int(base_demand * rng.integers(60, 100))
+                else:
+                    order_qty = int(base_demand * rng.integers(25, 50))
+                
                 shelf_days = int(prod["shelf_life_months"] * 30.4)
-                # Occasional shorter shelf life batch delivered by supplier
-                if rng.random() < 0.12:
-                    shelf_days = int(shelf_days * rng.uniform(0.4, 0.7))
+                # 20% chance of short-dated distributor delivery (60 to 180 days remaining)
+                if rng.random() < 0.20:
+                    shelf_days = int(rng.integers(60, 180))
 
                 expiry_dt = current_dt + timedelta(days=shelf_days)
                 b_id = f"BAT_{batch_counter:05d}"

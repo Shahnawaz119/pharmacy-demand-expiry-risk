@@ -10,18 +10,18 @@
     "final_rows": 731
   },
   "batches": {
-    "initial_rows": 981,
+    "initial_rows": 644,
     "duplicates_removed": 0,
     "invalid_expiry_dropped": 4,
-    "final_rows": 977
+    "final_rows": 640
   },
   "daily_sales": {
     "initial_rows": 43947,
     "duplicates_removed": 87,
-    "missing_price_imputed": 241,
+    "missing_price_imputed": 237,
     "missing_sales_imputed": 108,
     "negative_sales_rectified": 43,
-    "outliers_capped": 86,
+    "outliers_capped": 91,
     "final_rows": 43860
   }
 }
