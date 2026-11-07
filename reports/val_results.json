@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-11-08 00:41:26",
+  "demand": {
+    "baseline_ma7": {
+      "mae": 82.09,
+      "rmse": 113.16,
+      "wape": 20.37,
+      "bias": -8.8
+    },
+    "baseline_ma28": {
+      "mae": 63.21,
+      "rmse": 94.5,
+      "wape": 15.68,
+      "bias": -13.78
+    },
+    "baseline_seasonal_naive": {
+      "mae": 68.66,
+      "rmse": 97.7,
+      "wape": 17.04,
+      "bias": -10.79
+    },
+    "model_a_ridge": {
+      "mae": 57.28,
+      "rmse": 85.33,
+      "wape": 14.21,
+      "bias": -17.56
+    },
+    "model_b_lightgbm_quantile": {
+      "mae": 52.35,
+      "rmse": 78.13,
+      "wape": 12.99,
+      "bias": -19.01,
+      "coverage_pct": 73.5,
+      "mean_interval_width": 150.29
+    }
+  },
+  "expiry_risk": {
+    "baseline_rule": {
+      "precision": 1.0,
+      "recall": 0.9895,
+      "f1": 0.9947,
+      "pr_auc": 0.998,
+      "confusion_matrix": {
+        "tn": 118,
+        "fp": 0,
+        "fn": 2,
+        "tp": 189
+      },
+      "business_cost": 10.0
+    },
+    "classifier_logistic_regression": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "pr_auc": 1.0,
+      "confusion_matrix": {
+        "tn": 118,
+        "fp": 0,
+        "fn": 0,
+        "tp": 191
+      },
+      "business_cost": 0.0,
+      "optimal_threshold": 0.34
+    },
+    "classifier_lightgbm": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "pr_auc": 1.0,
+      "confusion_matrix": {
+        "tn": 118,
+        "fp": 0,
+        "fn": 0,
+        "tp": 191
+      },
+      "business_cost": 0.0,
+      "optimal_threshold": 0.93
+    }
+  }
+}
