@@ -10,3 +10,11 @@ timestamp,task,model,params,split,mae,rmse,wape,bias,coverage_pct,mean_interval_
 2026-11-08 00:41:26,expiry_risk,Baseline_Rule,"safety_factor=1.15,FEFO",validation,,,,,,,1.0,0.9895,0.9947,0.998,"{'tn': 118, 'fp': 0, 'fn': 2, 'tp': 189}",10.0,
 2026-11-08 00:41:26,expiry_risk,Classifier_LogisticRegression,"C=1.0,thresh=0.34",validation,,,,,,,1.0,1.0,1.0,1.0,"{'tn': 118, 'fp': 0, 'fn': 0, 'tp': 191}",0.0,0.34
 2026-11-08 00:41:26,expiry_risk,Classifier_LightGBM,"n_est=150,lr=0.03,thresh=0.93",validation,,,,,,,1.0,1.0,1.0,1.0,"{'tn': 118, 'fp': 0, 'fn': 0, 'tp': 191}",0.0,0.93
+2026-11-08 00:58:07,demand,Baseline_MA7,"window=7,horizon=28",validation,82.09,113.16,20.37,-8.8,,,,,,,,,
+2026-11-08 00:58:07,demand,Baseline_MA28,"window=28,horizon=28",validation,63.21,94.5,15.68,-13.78,,,,,,,,,
+2026-11-08 00:58:07,demand,Baseline_SeasonalNaive,horizon=28,validation,68.66,97.7,17.04,-10.79,,,,,,,,,
+2026-11-08 00:58:07,demand,ModelA_Ridge,"alpha=10.0,scaler=StandardScaler",validation,57.28,85.33,14.21,-17.56,,,,,,,,,
+2026-11-08 00:58:07,demand,ModelB_LightGBM_p50,"quantiles=[0.1,0.5,0.9],lr=0.04,num_leaves=31",validation,52.35,78.13,12.99,-19.01,73.5,150.29,,,,,,,
+2026-11-08 00:58:07,expiry_risk,Baseline_Rule,"safety_factor=1.15,FEFO",validation,,,,,,,1.0,0.9895,0.9947,0.998,"{'tn': 118, 'fp': 0, 'fn': 2, 'tp': 189}",10.0,
+2026-11-08 00:58:07,expiry_risk,Classifier_LogisticRegression,"C=1.0,thresh=0.34",validation,,,,,,,1.0,1.0,1.0,1.0,"{'tn': 118, 'fp': 0, 'fn': 0, 'tp': 191}",0.0,0.34
+2026-11-08 00:58:07,expiry_risk,Classifier_LightGBM,"n_est=150,lr=0.03,thresh=0.93",validation,,,,,,,1.0,1.0,1.0,1.0,"{'tn': 118, 'fp': 0, 'fn': 0, 'tp': 191}",0.0,0.93
