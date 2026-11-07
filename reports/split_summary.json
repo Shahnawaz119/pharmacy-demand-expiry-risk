@@ -1,0 +1,70 @@
+{
+  "demand_splits": {
+    "train": {
+      "date_range": [
+        "2023-01-01",
+        "2024-03-15"
+      ],
+      "days": 440,
+      "rows": 26400,
+      "share_pct": 68.01,
+      "target_mean": 399.71,
+      "target_std": 215.75
+    },
+    "gap_1_days": 28,
+    "validation": {
+      "date_range": [
+        "2024-04-13",
+        "2024-08-08"
+      ],
+      "days": 118,
+      "rows": 7080,
+      "share_pct": 18.24,
+      "target_mean": 403.07,
+      "target_std": 203.46
+    },
+    "gap_2_days": 28,
+    "test": {
+      "date_range": [
+        "2024-09-06",
+        "2024-12-03"
+      ],
+      "days": 89,
+      "rows": 5340,
+      "share_pct": 13.76,
+      "target_mean": 426.46,
+      "target_std": 244.03
+    }
+  },
+  "expiry_risk_splits": {
+    "train": {
+      "date_range": [
+        "2023-01-01",
+        "2024-03-15"
+      ],
+      "rows": 1081,
+      "share_pct": 73.69,
+      "positive_class_rate": 56.43
+    },
+    "gap_1_days": 28,
+    "validation": {
+      "date_range": [
+        "2024-04-13",
+        "2024-08-08"
+      ],
+      "rows": 309,
+      "share_pct": 21.06,
+      "positive_class_rate": 61.81
+    },
+    "gap_2_days": 28,
+    "test": {
+      "date_range": [
+        "2024-09-06",
+        "2024-12-03"
+      ],
+      "rows": 77,
+      "share_pct": 5.25,
+      "positive_class_rate": 2.6
+    }
+  }
+}

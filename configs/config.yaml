@@ -41,10 +41,10 @@ splits:
   train_end: "2024-03-15"
   gap_train_val_days: 28
   val_start: "2024-04-13"
-  val_end: "2024-09-05"
+  val_end: "2024-08-08"
   gap_val_test_days: 28
-  test_start: "2024-10-04"
-  test_end: "2024-12-31"
+  test_start: "2024-09-06"
+  test_end: "2024-12-03"
 
 forecasting:
   horizon_days: 28
