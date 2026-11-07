@@ -1,0 +1,293 @@
+{
+  "evaluation_timestamp": "2026-11-08 00:48:59",
+  "dataset_split_evaluated": "HELD_OUT_TEST_SET",
+  "demand_forecasting": {
+    "overall": {
+      "baseline_ma7": {
+        "mae": 92.68,
+        "rmse": 132.41,
+        "wape": 21.73,
+        "bias": 1.54
+      },
+      "baseline_ma28": {
+        "mae": 86.67,
+        "rmse": 126.42,
+        "wape": 20.32,
+        "bias": 2.95
+      },
+      "baseline_snaive": {
+        "mae": 83.13,
+        "rmse": 121.16,
+        "wape": 19.49,
+        "bias": 2.1
+      },
+      "model_a_ridge": {
+        "mae": 71.7,
+        "rmse": 105.71,
+        "wape": 16.81,
+        "bias": -8.68
+      },
+      "model_b_lightgbm_p50": {
+        "mae": 66.82,
+        "rmse": 102.39,
+        "wape": 15.67,
+        "bias": -19.35,
+        "coverage_pct": 72.04,
+        "mean_interval_width": 172.35
+      }
+    },
+    "by_category": {
+      "allergy": {
+        "rows": 534,
+        "actual_mean": 509.03,
+        "baseline_ma28_wape": 24.14,
+        "ridge_wape": 19.17,
+        "lgb_p50_wape": 19.23,
+        "lgb_p50_mae": 97.9,
+        "lgb_p50_rmse": 119.57,
+        "lgb_p50_bias": 18.84
+      },
+      "analgesics": {
+        "rows": 534,
+        "actual_mean": 457.41,
+        "baseline_ma28_wape": 21.79,
+        "ridge_wape": 16.13,
+        "lgb_p50_wape": 14.23,
+        "lgb_p50_mae": 65.09,
+        "lgb_p50_rmse": 94.61,
+        "lgb_p50_bias": -10.89
+      },
+      "antacids": {
+        "rows": 534,
+        "actual_mean": 613.46,
+        "baseline_ma28_wape": 19.73,
+        "ridge_wape": 16.6,
+        "lgb_p50_wape": 15.96,
+        "lgb_p50_mae": 97.88,
+        "lgb_p50_rmse": 126.03,
+        "lgb_p50_bias": -59.07
+      },
+      "antipyretics": {
+        "rows": 534,
+        "actual_mean": 480.57,
+        "baseline_ma28_wape": 20.32,
+        "ridge_wape": 14.01,
+        "lgb_p50_wape": 13.74,
+        "lgb_p50_mae": 66.05,
+        "lgb_p50_rmse": 96.98,
+        "lgb_p50_bias": 22.3
+      },
+      "baby_care": {
+        "rows": 534,
+        "actual_mean": 235.55,
+        "baseline_ma28_wape": 15.18,
+        "ridge_wape": 16.29,
+        "lgb_p50_wape": 12.84,
+        "lgb_p50_mae": 30.25,
+        "lgb_p50_rmse": 41.07,
+        "lgb_p50_bias": 1.05
+      },
+      "cough_cold": {
+        "rows": 534,
+        "actual_mean": 562.26,
+        "baseline_ma28_wape": 31.5,
+        "ridge_wape": 27.21,
+        "lgb_p50_wape": 25.14,
+        "lgb_p50_mae": 141.36,
+        "lgb_p50_rmse": 200.0,
+        "lgb_p50_bias": -114.9
+      },
+      "diabetic_care": {
+        "rows": 534,
+        "actual_mean": 243.67,
+        "baseline_ma28_wape": 12.91,
+        "ridge_wape": 13.26,
+        "lgb_p50_wape": 11.15,
+        "lgb_p50_mae": 27.16,
+        "lgb_p50_rmse": 36.06,
+        "lgb_p50_bias": -9.32
+      },
+      "first_aid": {
+        "rows": 534,
+        "actual_mean": 326.02,
+        "baseline_ma28_wape": 12.49,
+        "ridge_wape": 12.09,
+        "lgb_p50_wape": 10.97,
+        "lgb_p50_mae": 35.76,
+        "lgb_p50_rmse": 45.88,
+        "lgb_p50_bias": -3.87
+      },
+      "skin_care": {
+        "rows": 534,
+        "actual_mean": 308.59,
+        "baseline_ma28_wape": 22.26,
+        "ridge_wape": 18.42,
+        "lgb_p50_wape": 17.03,
+        "lgb_p50_mae": 52.56,
+        "lgb_p50_rmse": 76.11,
+        "lgb_p50_bias": -14.84
+      },
+      "vitamins_supplements": {
+        "rows": 534,
+        "actual_mean": 528.04,
+        "baseline_ma28_wape": 13.59,
+        "ridge_wape": 10.72,
+        "lgb_p50_wape": 10.26,
+        "lgb_p50_mae": 54.16,
+        "lgb_p50_rmse": 73.51,
+        "lgb_p50_bias": -22.8
+      }
+    }
+  },
+  "expiry_risk_classification": {
+    "baseline_rule": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "pr_auc": 0.7565,
+      "confusion_matrix": {
+        "tn": 75,
+        "fp": 0,
+        "fn": 1,
+        "tp": 1
+      },
+      "business_cost": 5.0
+    },
+    "logistic_regression": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "pr_auc": 0.6625,
+      "confusion_matrix": {
+        "tn": 75,
+        "fp": 0,
+        "fn": 1,
+        "tp": 1
+      },
+      "business_cost": 5.0,
+      "threshold": 0.34
+    },
+    "lightgbm_classifier": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "pr_auc": 0.5593,
+      "confusion_matrix": {
+        "tn": 75,
+        "fp": 0,
+        "fn": 1,
+        "tp": 1
+      },
+      "business_cost": 5.0,
+      "threshold": 0.93
+    }
+  },
+  "error_diagnostics": {
+    "worst_products": [
+      {
+        "product_id": "PROD_030",
+        "product_name": "menthol_cough_lozenges_strip",
+        "category": "cough_cold",
+        "mae": 261.3979685774174,
+        "mean_actual": 985.0674157303371,
+        "rows": 89,
+        "wape": 26.536048640246086
+      },
+      {
+        "product_id": "PROD_025",
+        "product_name": "cetirizine_cold_relief_tab",
+        "category": "cough_cold",
+        "mae": 210.47407572455583,
+        "mean_actual": 768.7528089887641,
+        "rows": 89,
+        "wape": 27.37864151695504
+      },
+      {
+        "product_id": "PROD_014",
+        "product_name": "pantoprazole_40mg",
+        "category": "antacids",
+        "mae": 176.55569185876433,
+        "mean_actual": 980.3820224719101,
+        "rows": 89,
+        "wape": 18.008866728665765
+      },
+      {
+        "product_id": "PROD_001",
+        "product_name": "paracetamol_500mg",
+        "category": "analgesics",
+        "mae": 149.91498126463154,
+        "mean_actual": 896.1685393258427,
+        "rows": 89,
+        "wape": 16.72843607937939
+      },
+      {
+        "product_id": "PROD_026",
+        "product_name": "dextromethorphan_syrup_100ml",
+        "category": "cough_cold",
+        "mae": 133.60293761189317,
+        "mean_actual": 492.82022471910113,
+        "rows": 89,
+        "wape": 27.109873116113388
+      }
+    ],
+    "by_velocity": {
+      "fast": {
+        "mae": 124.87416690217627,
+        "wape": 16.18840813216307,
+        "bias": -63.12828573606161,
+        "count": 1068
+      },
+      "medium": {
+        "mae": 55.7218409769384,
+        "wape": 15.380806252625886,
+        "bias": -8.497930001821668,
+        "count": 3916
+      },
+      "slow": {
+        "mae": 14.692247866355917,
+        "wape": 15.045997872515912,
+        "bias": -7.386945831597396,
+        "count": 356
+      }
+    },
+    "by_holiday": {
+      "0": {
+        "mae": 66.885351681041,
+        "wape": 15.679651798324363,
+        "bias": -19.691986177970602,
+        "count": 5100
+      },
+      "1": {
+        "mae": 65.36452576803622,
+        "wape": 15.415631522430626,
+        "bias": -12.08135942352527,
+        "count": 240
+      }
+    },
+    "by_stockout": {
+      "0": {
+        "mae": 66.81699995461382,
+        "wape": 15.667853738459442,
+        "bias": -19.34993553732137,
+        "count": 5340
+      }
+    },
+    "case_study_error": {
+      "product_id": "PROD_030",
+      "product_name": "menthol_cough_lozenges_strip",
+      "category": "cough_cold",
+      "date": "2024-11-24",
+      "actual_target_28d": 1573.0,
+      "predicted_p50": 940.67,
+      "prediction_interval": [
+        657.76,
+        1022.32
+      ],
+      "absolute_error": 632.33,
+      "is_promoted": 0,
+      "stockout_flag": 0,
+      "stock_on_hand": 775.0,
+      "explanation": "On 2024-11-24, menthol_cough_lozenges_strip recorded an actual 28-day forward demand of 1573.0 units vs. a model p50 forecast of 940.7 units (error = 632.3 units). Investigation reveals that this date immediately preceded the Diwali festive season in winter, coinciding with a sudden promotional surge and stocking buildup that outpaced the 28-day historical lag averages."
+    }
+  }
+}
