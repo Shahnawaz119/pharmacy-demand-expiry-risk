@@ -48,6 +48,10 @@ st.set_page_config(
 
 @st.cache_resource
 def load_model_bundle() -> Optional[Dict[str, Any]]:
+    if not MODEL_PATH.exists() or not PRODUCTS_PATH.exists():
+        with st.spinner("Initializing first-time model artifact and datasets (this happens once)..."):
+            from src.train import run_full_pipeline
+            run_full_pipeline()
     if not MODEL_PATH.exists():
         st.error(f"Model artifact not found at {MODEL_PATH}. Run 'python -m src.train' first.")
         return None

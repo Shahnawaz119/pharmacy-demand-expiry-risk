@@ -72,12 +72,22 @@ venv.bak/
 .DS_Store
 
 # Large or generated data files (preserve directory placeholders via .gitkeep)
-# Note: synthetic demo data is reproducible via 'make data' or 'python -m src.data.generate_data'
+# Note: raw data and train/val/test splits stay local
 data/raw/*.csv
-data/processed/*.csv
+data/processed/train_*.csv
+data/processed/val_*.csv
+data/processed/test_*.csv
 !data/raw/.gitkeep
 !data/processed/.gitkeep
+!data/processed/products.csv
+!data/processed/batches.csv
+!data/processed/calendar.csv
+!data/processed/daily_sales.csv
+!data/processed/demand_features.csv
+!data/processed/expiry_risk_features.csv
 
-# Saved model artifacts (reproducible via 'make train')
-models/*.joblib
+# Saved model artifacts: track primary production bundle for cloud deployment
+models/demand_*.joblib
+models/expiry_*.joblib
+!models/pharmacy_forecaster.joblib
 !models/.gitkeep
